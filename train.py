@@ -4,15 +4,18 @@ import time
 import torch
 import torch.nn
 import argparse
+import wandb
+import torch.multiprocessing as mp
 from PIL import Image
-from tensorboardX import SummaryWriter
+
 
 from validate import validate
 from data import create_dataloader
 from earlystop import EarlyStopping
 from networks.trainer import Trainer
 from options.train_options import TrainOptions
-
+from accelerate import Accelerator
+from util import *
 
 """Currently assumes jpg_prob, blur_prob 0 or 1"""
 def get_val_opt():
@@ -37,15 +40,46 @@ if __name__ == '__main__':
     opt = TrainOptions().parse()
     opt.dataroot = '{}/{}/'.format(opt.dataroot, opt.train_split)
     val_opt = get_val_opt()
+    
+    # set launch method 
+    mp.set_start_method("spawn")
 
-    data_loader = create_dataloader(opt)
-    dataset_size = len(data_loader)
+    # multiple GPUs
+    accelerator = Accelerator(
+        split_batches = True,
+        dispatch_batches = False,
+    )
+    # set print method and seed
+    setup_for_distributed(accelerator.is_main_process)
+    set_seeds(opt.seed)
+
+    # dl and model
+    dl = create_dataloader(opt)
+    dataset_size = len(dl)
     print('#training images = %d' % dataset_size)
+    model = modeldict[opt.mop]
 
-    train_writer = SummaryWriter(os.path.join(opt.checkpoints_dir, opt.name, "train"))
-    val_writer = SummaryWriter(os.path.join(opt.checkpoints_dir, opt.name, "val"))
+    # optimizer
+    if opt.optim == 'adam':
+                optimizer = torch.optim.Adam(model.parameters(),
+                                                  lr=opt.lr, betas=(opt.beta1, 0.999))
+            elif opt.optim == 'sgd':
+                self.optimizer = torch.optim.SGD(self.model.parameters(),
+                                                 lr=opt.lr, momentum=0.0, weight_decay=0)
+            else:
+                raise ValueError("optim should be [adam, sgd]")
 
-    model = Trainer(opt)
+    # wandb
+    if accelerator.is_main_process and not opt.debug:
+        # init wandb logging
+        if opt.wandb_id is not None:
+            # project为项目名称，config用来记录当前实验的参数配置，id是本次实验的唯一标识符
+            # must代表强制恢复一个之前中断的实验，恢复失败则报错，id，name不是必要参数
+            wandb.init(project=opt.wandb_project, config=opt, id=opt.wandb_id, resume="must")
+        else:
+            wandb.init(project=opt.wandb_project, config=opt)
+
+    model = Trainer(opt,acclerator,early_stopper,dl,vdl)
     early_stopping = EarlyStopping(patience=opt.earlystop_epoch, delta=-0.001, verbose=True)
     for epoch in range(opt.niter):
         epoch_start_time = time.time()
