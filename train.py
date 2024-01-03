@@ -16,6 +16,7 @@ from networks.trainer import Trainer
 from options.train_options import TrainOptions
 from accelerate import Accelerator
 from util import *
+from models.model_choice import model_dic
 
 """Currently assumes jpg_prob, blur_prob 0 or 1"""
 def get_val_opt():
@@ -53,21 +54,22 @@ if __name__ == '__main__':
     setup_for_distributed(accelerator.is_main_process)
     set_seeds(opt.seed)
 
-    # dl and model
+    # dl,vdl and model
     dl = create_dataloader(opt)
-    dataset_size = len(dl)
-    print('#training images = %d' % dataset_size)
-    model = modeldict[opt.mop]
+    vdl = create_dataloader(val_opt)
+    print('#training images = %d' % len(dl))
+    print('#validating images = %d' % len(vdl))
+    # weights is none in default
+    model = model_dic[opt.mop]()
+    
 
     # optimizer
     if opt.optim == 'adam':
-                optimizer = torch.optim.Adam(model.parameters(),
-                                                  lr=opt.lr, betas=(opt.beta1, 0.999))
-            elif opt.optim == 'sgd':
-                self.optimizer = torch.optim.SGD(self.model.parameters(),
-                                                 lr=opt.lr, momentum=0.0, weight_decay=0)
-            else:
-                raise ValueError("optim should be [adam, sgd]")
+        optimizer = torch.optim.Adam(model.parameters(),lr=opt.lr, betas=(opt.beta1, 0.999))
+    elif opt.optim == 'sgd':
+        optimizer = torch.optim.SGD(model.parameters(),lr=opt.lr, momentum=0.0, weight_decay=0)
+    else:
+        raise ValueError("optim should be [adam, sgd]")
 
     # wandb
     if accelerator.is_main_process and not opt.debug:
@@ -79,8 +81,20 @@ if __name__ == '__main__':
         else:
             wandb.init(project=opt.wandb_project, config=opt)
 
-    model = Trainer(opt,acclerator,early_stopper,dl,vdl)
-    early_stopping = EarlyStopping(patience=opt.earlystop_epoch, delta=-0.001, verbose=True)
+    # continue
+    if opt.continue_train:
+        raise NotImplemented("continue training!")
+
+    # earlystopper
+    if opt.continue_train and accelerator.is_main_process:
+        raise NotImplemented("continue training!")
+    else:
+        early_stopper = EarlyStopping(patience=opt.earlystop_epoch, delta=-0.001, verbose=True)
+        
+
+    trainer = Trainer(opt,accelerator,model,dl,vdl,optimizer,early_stopper)
+
+
     for epoch in range(opt.niter):
         epoch_start_time = time.time()
         iter_data_time = time.time()

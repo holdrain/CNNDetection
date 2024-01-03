@@ -3,38 +3,27 @@ import torch
 import torch.nn as nn
 from networks.resnet import resnet50
 from networks.base_model import BaseModel, init_weights
-
+from accelerate import Accelerator
 
 class Trainer(BaseModel):
     def name(self):
         return 'Trainer'
 
-    def __init__(self, opt):
+    def __init__(self, opt, accelerator,model,optimizer):
         super(Trainer, self).__init__(opt)
 
-        if self.isTrain and not opt.continue_train:
-            self.model = resnet50(pretrained=True)
-            self.model.fc = nn.Linear(2048, 1)
-            torch.nn.init.normal_(self.model.fc.weight.data, 0.0, opt.init_gain)
-
-        if not self.isTrain or opt.continue_train:
-            self.model = resnet50(num_classes=1)
-
+        self.accelerator = accelerator
         if self.isTrain:
-            self.loss_fn = nn.BCEWithLogitsLoss()
-            # initialize optimizers
-            if opt.optim == 'adam':
-                self.optimizer = torch.optim.Adam(self.model.parameters(),
-                                                  lr=opt.lr, betas=(opt.beta1, 0.999))
-            elif opt.optim == 'sgd':
-                self.optimizer = torch.optim.SGD(self.model.parameters(),
-                                                 lr=opt.lr, momentum=0.0, weight_decay=0)
-            else:
-                raise ValueError("optim should be [adam, sgd]")
+            self.model = model
+            torch.nn.init.normal_(self.model.fc.weight.data, 0.0, opt.init_gain)
+            self.model = self.accelerator.prepare(model)
+
+            self.loss_fn = nn.CrossEntropyLoss()
+            self.optimzer = self.accelerator.prepare(optimizer)
 
         if not self.isTrain or opt.continue_train:
             self.load_networks(opt.epoch)
-        self.model.to(opt.gpu_ids[0])
+
 
 
     def adjust_learning_rate(self, min_lr=1e-6):

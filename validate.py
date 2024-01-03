@@ -23,6 +23,24 @@ def validate(model, opt):
     ap = average_precision_score(y_true, y_pred)
     return acc, ap, r_acc, f_acc, y_true, y_pred
 
+def Custom_validate(model, opt):
+    data_loader = create_dataloader(opt)
+    softmax = torch.softmax(dim=1)
+    with torch.no_grad():
+        y_true, y_pred = [], []
+        for img, label in data_loader:
+            in_tens = img.cuda()
+            y_pred.extend(softmax(model(in_tens)).tolist()) #归一化
+            y_true.extend(label.flatten().tolist())
+    y_pred = torch.Tensor(y_pred)
+    y_true = torch.Tensor(y_true)
+    y_true, y_pred = np.array(y_true), np.array(y_pred)
+    r_acc = accuracy_score(y_true[y_true==0], torch.argmax(y_pred[y_true==0],dim=1))
+    f_acc = accuracy_score(y_true[y_true==1], torch.argmax(y_pred[y_true==1],dim=1))
+    acc = accuracy_score(y_true, torch.argmax(y_pred,dim=1))
+    ap = average_precision_score(y_true, y_pred[0])
+    return acc, ap, r_acc, f_acc, y_true, y_pred
+
 
 if __name__ == '__main__':
     opt = TestOptions().parse(print_options=False)
