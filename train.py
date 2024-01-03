@@ -6,10 +6,11 @@ import torch.nn
 import argparse
 import wandb
 import torch.multiprocessing as mp
+
+
 from PIL import Image
-
-
-from validate import validate
+from tqdm.auto import tqdm
+from validate import validate,Custom_validate
 from data import create_dataloader
 from earlystop import EarlyStopping
 from networks.trainer import Trainer
@@ -54,14 +55,18 @@ if __name__ == '__main__':
     setup_for_distributed(accelerator.is_main_process)
     set_seeds(opt.seed)
 
+    # torch.set_default_device(accelerator.device)
     # dl,vdl and model
     dl = create_dataloader(opt)
     vdl = create_dataloader(val_opt)
     print('#training images = %d' % len(dl))
     print('#validating images = %d' % len(vdl))
     # weights is none in default
-    model = model_dic[opt.mop]()
-    
+
+    model = model_dic[opt.arch]
+
+
+
 
     # optimizer
     if opt.optim == 'adam':
@@ -81,7 +86,7 @@ if __name__ == '__main__':
         else:
             wandb.init(project=opt.wandb_project, config=opt)
 
-    # continue
+    # continue training
     if opt.continue_train:
         raise NotImplemented("continue training!")
 
@@ -90,56 +95,58 @@ if __name__ == '__main__':
         raise NotImplemented("continue training!")
     else:
         early_stopper = EarlyStopping(patience=opt.earlystop_epoch, delta=-0.001, verbose=True)
-        
+    
 
-    trainer = Trainer(opt,accelerator,model,dl,vdl,optimizer,early_stopper)
-
+    trainer = Trainer(opt,accelerator,model,optimizer)
+    dl = accelerator.prepare(dl)
+    vdl = accelerator.prepare(vdl)
 
     for epoch in range(opt.niter):
         epoch_start_time = time.time()
         iter_data_time = time.time()
         epoch_iter = 0
+        with tqdm(initial = 0,total = len(dl),disable = not accelerator.is_main_process) as pbar:
+            for data in dl:
+                trainer.total_steps += 1
+                epoch_iter += opt.batch_size
 
-        for i, data in enumerate(data_loader):
-            model.total_steps += 1
-            epoch_iter += opt.batch_size
+                trainer.set_input(data)
+                trainer.optimize_parameters()
 
-            model.set_input(data)
-            model.optimize_parameters()
+                if trainer.total_steps % opt.loss_freq == 0 and accelerator.is_main_process:
+                    print("Train loss: {} at step: {}".format(trainer.loss, trainer.total_steps))
+                    wandb.log({'Train loss':trainer.loss})
 
-            if model.total_steps % opt.loss_freq == 0:
-                print("Train loss: {} at step: {}".format(model.loss, model.total_steps))
-                train_writer.add_scalar('loss', model.loss, model.total_steps)
+                if trainer.total_steps % opt.save_latest_freq == 0 and accelerator.is_main_process:
+                    print('saving the latest model %s (epoch %d, model.total_steps %d)' %
+                        (opt.name, epoch, trainer.total_steps))
+                    trainer.save_networks('latest')
 
-            if model.total_steps % opt.save_latest_freq == 0:
-                print('saving the latest model %s (epoch %d, model.total_steps %d)' %
-                      (opt.name, epoch, model.total_steps))
-                model.save_networks('latest')
+                pbar.update(1)
+                # print("Iter time: %d sec" % (time.time()-iter_data_time))
+                # iter_data_time = time.time()
 
-            # print("Iter time: %d sec" % (time.time()-iter_data_time))
-            # iter_data_time = time.time()
+            if epoch % opt.save_epoch_freq == 0 and accelerator.is_main_process:
+                print('saving the model at the end of epoch %d, iters %d' %
+                    (epoch, trainer.total_steps))
+                trainer.save_networks('latest')
+                trainer.save_networks(epoch)
 
-        if epoch % opt.save_epoch_freq == 0:
-            print('saving the model at the end of epoch %d, iters %d' %
-                  (epoch, model.total_steps))
-            model.save_networks('latest')
-            model.save_networks(epoch)
-
-        # Validation
-        model.eval()
-        acc, ap = validate(model.model, val_opt)[:2]
-        val_writer.add_scalar('accuracy', acc, model.total_steps)
-        val_writer.add_scalar('ap', ap, model.total_steps)
-        print("(Val @ epoch {}) acc: {}; ap: {}".format(epoch, acc, ap))
-
-        early_stopping(acc, model)
-        if early_stopping.early_stop:
-            cont_train = model.adjust_learning_rate()
-            if cont_train:
-                print("Learning rate dropped by 10, continue training...")
-                early_stopping = EarlyStopping(patience=opt.earlystop_epoch, delta=-0.002, verbose=True)
-            else:
-                print("Early stopping.")
-                break
-        model.train()
+            # Validation
+            trainer.eval()
+            acc, ap = Custom_validate(model.model, val_opt)[:2]
+            wandb.log({'accuracy':acc,'ap':ap})
+            pbar.set_description("(Val @ epoch {}) acc: {}; ap: {}".format(epoch, acc, ap))
+            early_stopping(acc, model)
+            if early_stopping.early_stop:
+                cont_train = trainer.adjust_learning_rate()
+                if cont_train:
+                    print("Learning rate dropped by 10, continue training...")
+                    early_stopping = EarlyStopping(patience=opt.earlystop_epoch, delta=-0.002, verbose=True)
+                else:
+                    print("Early stopping.")
+                    accelerator.set_trigger()
+                    if accelerator.check_trigger():
+                        break
+            trainer.train()
 

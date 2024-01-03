@@ -12,7 +12,7 @@ class BaseOptions():
 
     def initialize(self, parser):
         parser.add_argument('--mode', default='binary')
-        parser.add_argument('--arch', type=str, default='res50', help='architecture for binary classification')
+        parser.add_argument('--arch', type=str, default='resnet', help='architecture for binary classification')
 
         # data augmentation
         parser.add_argument('--rz_interp', default='bilinear')
@@ -22,11 +22,11 @@ class BaseOptions():
         parser.add_argument('--jpg_method', default='cv2')
         parser.add_argument('--jpg_qual', default='75')
 
-        parser.add_argument('--dataroot', default='./dataset/', help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
+        parser.add_argument('--dataroot', default='/mnt/shared/cnndetection2020', help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
         parser.add_argument('--classes', default='', help='image classes to train on')
         parser.add_argument('--class_bal', action='store_true')
-        parser.add_argument('--batch_size', type=int, default=64, help='input batch size')
-        parser.add_argument('--loadSize', type=int, default=256, help='scale images to this size')
+        parser.add_argument('--batch_size', type=int, default=1536, help='input batch size')
+        parser.add_argument('--loadSize', type=int, default=224, help='scale images to this size')
         parser.add_argument('--cropSize', type=int, default=224, help='then crop to this size')
         parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         parser.add_argument('--name', type=str, default='experiment_name', help='name of the experiment. It decides where to store samples and models')
@@ -39,6 +39,7 @@ class BaseOptions():
         parser.add_argument('--init_type', type=str, default='normal', help='network initialization [normal|xavier|kaiming|orthogonal]')
         parser.add_argument('--init_gain', type=float, default=0.02, help='scaling factor for normal, xavier and orthogonal.')
         parser.add_argument('--suffix', default='', type=str, help='customized suffix: opt.name = opt.name + suffix: e.g., {model}_{netG}_size{loadSize}')
+        parser.add_argument('--seed',default=2023, type=int)
         self.initialized = True
         return parser
 

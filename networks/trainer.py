@@ -13,13 +13,15 @@ class Trainer(BaseModel):
         super(Trainer, self).__init__(opt)
 
         self.accelerator = accelerator
+        self.device = accelerator.device
         if self.isTrain:
             self.model = model
-            torch.nn.init.normal_(self.model.fc.weight.data, 0.0, opt.init_gain)
+            if opt.arch == "resnet":
+                torch.nn.init.normal_(self.model.fc.weight.data, 0.0, opt.init_gain)
             self.model = self.accelerator.prepare(model)
 
             self.loss_fn = nn.CrossEntropyLoss()
-            self.optimzer = self.accelerator.prepare(optimizer)
+            self.optimizer = self.accelerator.prepare(optimizer)
 
         if not self.isTrain or opt.continue_train:
             self.load_networks(opt.epoch)
@@ -34,19 +36,19 @@ class Trainer(BaseModel):
         return True
 
     def set_input(self, input):
-        self.input = input[0].to(self.device)
-        self.label = input[1].to(self.device).float()
+        self.input = input[0]
+        self.label = input[1].float()
 
 
     def forward(self):
         self.output = self.model(self.input)
 
     def get_loss(self):
-        return self.loss_fn(self.output.squeeze(1), self.label)
+        return self.loss_fn(self.output.squeeze(1), self.label.long())
 
     def optimize_parameters(self):
         self.forward()
-        self.loss = self.loss_fn(self.output.squeeze(1), self.label)
+        self.loss = self.loss_fn(self.output.squeeze(1), self.label.long())
         self.optimizer.zero_grad()
         self.loss.backward()
         self.optimizer.step()

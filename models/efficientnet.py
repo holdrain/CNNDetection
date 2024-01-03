@@ -321,8 +321,7 @@ class EfficientNet(nn.Module):
         Returns:
             An efficientnet model.
         """
-        print(model_name)
-        print(override_params)
+        
         cls._check_model_name_is_valid(model_name)
         blocks_args, global_params = get_model_params(model_name, override_params)
         model = cls(blocks_args, global_params)
