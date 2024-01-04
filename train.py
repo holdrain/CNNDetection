@@ -90,7 +90,7 @@ if __name__ == '__main__':
     if opt.continue_train and accelerator.is_main_process:
         raise NotImplemented("continue training!")
     else:
-        early_stopper = EarlyStopping(patience=opt.earlystop_epoch, delta=-0.001, verbose=True)
+        early_stopping = EarlyStopping(accelerator,patience=opt.earlystop_epoch, delta=-0.001, verbose=True)
     
 
     trainer = Trainer(opt,accelerator,model,optimizer)
@@ -133,15 +133,15 @@ if __name__ == '__main__':
             # Validation
             trainer.eval()
             acc, ap = Custom_validate(trainer.model, vdl,accelerator)[:2]
-            if not opt.decbug:
+            if not opt.debug and accelerator.is_main_process:
                 wandb.log({'accuracy':acc,'ap':ap})
-            pbar.set_description("(Val @ epoch {}) acc: {}; ap: {}".format(epoch, acc, ap))
-            early_stopping(acc, trainer.model)
+                pbar.set_description("(Val @ epoch {}) acc: {}; ap: {}".format(epoch, acc, ap))
+            early_stopping(acc, trainer)
             if early_stopping.early_stop:
                 cont_train = trainer.adjust_learning_rate()
                 if cont_train:
                     print("Learning rate dropped by 10, continue training...")
-                    early_stopping = EarlyStopping(patience=opt.earlystop_epoch, delta=-0.002, verbose=True)
+                    early_stopping = EarlyStopping(accelerator,patience=opt.earlystop_epoch, delta=-0.002, verbose=True)
                 else:
                     print("Early stopping.")
                     accelerator.set_trigger()

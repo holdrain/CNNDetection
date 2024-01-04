@@ -52,6 +52,7 @@ def validate(model, opt):
 #     return acc, ap, r_acc, f_acc, y_true, y_pred
 
 def Custom_validate(model,dl,accelerator):
+    count = 0 
     with torch.inference_mode():
         y_true, y_pred = [], []
         for img, label in tqdm(dl,position=0,desc=f"validating",disable=not accelerator.is_main_process):
@@ -60,6 +61,9 @@ def Custom_validate(model,dl,accelerator):
             all_y_p,all_label = accelerator.gather_for_metrics((y_p,label))
             y_pred.extend(all_y_p.tolist()) 
             y_true.extend(all_label.flatten().tolist())
+            count += 1
+            if count == 30:
+                break
         y_true, y_pred = np.array(y_true), np.array(y_pred,dtype=np.float32)
         r_acc = accuracy_score(y_true[y_true==0], np.argmax(y_pred[y_true==0],axis=1))
         f_acc = accuracy_score(y_true[y_true==1], np.argmax(y_pred[y_true==1],axis=1))

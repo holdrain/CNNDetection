@@ -4,7 +4,7 @@ import torch
 
 class EarlyStopping:
     """Early stops the training if validation loss doesn't improve after a given patience."""
-    def __init__(self, patience=1, verbose=False, delta=0):
+    def __init__(self, accelerator, patience=1, verbose=False, delta=0):
         """
         Args:
             patience (int): How long to wait after last time validation loss improved.
@@ -21,6 +21,7 @@ class EarlyStopping:
         self.early_stop = False
         self.score_max = -np.Inf
         self.delta = delta
+        self.accelerator = accelerator
 
     def __call__(self, score, model):
         if self.best_score is None:
@@ -40,5 +41,5 @@ class EarlyStopping:
         '''Saves model when validation loss decrease.'''
         if self.verbose:
             print(f'Validation accuracy increased ({self.score_max:.6f} --> {score:.6f}).  Saving model ...')
-        model.save_networks('best')
+        model.save_networks('best',self.accelerator)
         self.score_max = score
