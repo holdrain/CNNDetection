@@ -1,0 +1,433 @@
+2024-01-04 15:18:16,713 INFO    StreamThr :3033518 [internal.py:wandb_internal():86] W&B internal server running at pid: 3033518, started at: 2024-01-04 15:18:16.712246
+2024-01-04 15:18:16,716 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status
+2024-01-04 15:18:16,725 INFO    WriterThread:3033518 [datastore.py:open_for_write():85] open: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/run-0005.wandb
+2024-01-04 15:18:16,726 DEBUG   SenderThread:3033518 [sender.py:send():380] send: header
+2024-01-04 15:18:16,750 DEBUG   SenderThread:3033518 [sender.py:send():380] send: run
+2024-01-04 15:18:17,698 INFO    SenderThread:3033518 [dir_watcher.py:__init__():211] watching files in: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files
+2024-01-04 15:18:17,699 INFO    SenderThread:3033518 [sender.py:_start_run_threads():1124] run started: 0005 with start time 1704352696.713161
+2024-01-04 15:18:17,706 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: check_version
+2024-01-04 15:18:17,707 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: check_version
+2024-01-04 15:18:18,126 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: run_start
+2024-01-04 15:18:18,143 DEBUG   HandlerThread:3033518 [system_info.py:__init__():32] System info init
+2024-01-04 15:18:18,143 DEBUG   HandlerThread:3033518 [system_info.py:__init__():47] System info init done
+2024-01-04 15:18:18,143 INFO    HandlerThread:3033518 [system_monitor.py:start():194] Starting system monitor
+2024-01-04 15:18:18,144 INFO    SystemMonitor:3033518 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-04 15:18:18,145 INFO    HandlerThread:3033518 [system_monitor.py:probe():214] Collecting system info
+2024-01-04 15:18:18,145 INFO    SystemMonitor:3033518 [interfaces.py:start():190] Started cpu monitoring
+2024-01-04 15:18:18,146 INFO    SystemMonitor:3033518 [interfaces.py:start():190] Started disk monitoring
+2024-01-04 15:18:18,147 INFO    SystemMonitor:3033518 [interfaces.py:start():190] Started gpu monitoring
+2024-01-04 15:18:18,148 INFO    SystemMonitor:3033518 [interfaces.py:start():190] Started memory monitoring
+2024-01-04 15:18:18,150 INFO    SystemMonitor:3033518 [interfaces.py:start():190] Started network monitoring
+2024-01-04 15:18:18,206 DEBUG   HandlerThread:3033518 [system_info.py:probe():196] Probing system
+2024-01-04 15:18:18,209 DEBUG   HandlerThread:3033518 [system_info.py:_probe_git():181] Probing git
+2024-01-04 15:18:18,217 DEBUG   HandlerThread:3033518 [system_info.py:_probe_git():189] Probing git done
+2024-01-04 15:18:18,217 DEBUG   HandlerThread:3033518 [system_info.py:probe():244] Probing system done
+2024-01-04 15:18:18,217 DEBUG   HandlerThread:3033518 [system_monitor.py:probe():223] {'os': 'Linux-5.4.0-113-generic-x86_64-with-glibc2.31', 'python': '3.11.3', 'heartbeatAt': '2024-01-04T07:18:18.206823', 'startedAt': '2024-01-04T07:18:16.643628', 'docker': None, 'cuda': None, 'args': ('--gpu_ids', '0,1,2,3', '--name', 'blur_jpg_prob0.5', '--blur_prob', '0.5', '--blur_sig', '0.0,3.0', '--jpg_prob', '0.5', '--jpg_method', 'cv2,pil', '--jpg_qual', '30,100', '--dataroot', '/mnt/shared/cnndetection2020', '--classes', 'airplane,bird,bicycle,boat,bottle,bus,car,cat,cow,chair,diningtable,dog,person,pottedplant,motorbike,tvmonitor,train,sheep,sofa,horse', '--batch_size', '800', '--wandb_id', '0005'), 'state': 'running', 'program': '/mnt/traffic/home/dongziping/CNNDetection/train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'git': {'remote': 'https://github.com/holdrain/CNNDetection.git', 'commit': 'a6f69e3f0edc95dd9e5593fad23c5b33824447b3'}, 'email': '875059183@qq.com', 'root': '/mnt/traffic/home/dongziping/CNNDetection', 'host': 'amax', 'username': 'dongziping', 'executable': '/mnt/traffic/home/dongziping/.conda/envs/torch200/bin/python', 'cpu_count': 32, 'cpu_count_logical': 64, 'cpu_freq': {'current': 1305.1518125000007, 'min': 1200.0, 'max': 3900.0}, 'cpu_freq_per_core': [{'current': 1200.082, 'min': 1200.0, 'max': 3900.0}, {'current': 1291.264, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.901, 'min': 1200.0, 'max': 3900.0}, {'current': 1225.857, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.09, 'min': 1200.0, 'max': 3900.0}, {'current': 1285.456, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.675, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.303, 'min': 1200.0, 'max': 3900.0}, {'current': 1252.681, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.471, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.065, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.267, 'min': 1200.0, 'max': 3900.0}, {'current': 3601.164, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.164, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.047, 'min': 1200.0, 'max': 3900.0}, {'current': 1201.427, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.961, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.259, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.295, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.462, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.095, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.647, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.18, 'min': 1200.0, 'max': 3900.0}, {'current': 1199.9, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.759, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.518, 'min': 1200.0, 'max': 3900.0}, {'current': 1202.157, 'min': 1200.0, 'max': 3900.0}, {'current': 1264.475, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.569, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.215, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.409, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.016, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.038, 'min': 1200.0, 'max': 3900.0}, {'current': 1249.059, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.141, 'min': 1200.0, 'max': 3900.0}, {'current': 1241.824, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.619, 'min': 1200.0, 'max': 3900.0}, {'current': 1288.959, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.071, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.012, 'min': 1200.0, 'max': 3900.0}, {'current': 1382.444, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.174, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.158, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.119, 'min': 1200.0, 'max': 3900.0}, {'current': 3646.006, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.534, 'min': 1200.0, 'max': 3900.0}, {'current': 1199.955, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.259, 'min': 1200.0, 'max': 3900.0}, {'current': 1201.311, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.556, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.098, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.432, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.092, 'min': 1200.0, 'max': 3900.0}, {'current': 1201.174, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.086, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.298, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.24, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.462, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.393, 'min': 1200.0, 'max': 3900.0}, {'current': 1611.243, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.48, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.295, 'min': 1200.0, 'max': 3900.0}, {'current': 1200.835, 'min': 1200.0, 'max': 3900.0}, {'current': 1197.913, 'min': 1200.0, 'max': 3900.0}], 'disk': {'/': {'total': 870.5729293823242, 'used': 40.5518913269043}}, 'gpu': 'NVIDIA GeForce RTX 3090', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}], 'memory': {'total': 187.5830955505371}}
+2024-01-04 15:18:18,217 INFO    HandlerThread:3033518 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-04 15:18:18,217 INFO    HandlerThread:3033518 [system_monitor.py:probe():227] Publishing system info
+2024-01-04 15:18:18,217 DEBUG   HandlerThread:3033518 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2024-01-04 15:18:18,217 DEBUG   HandlerThread:3033518 [system_info.py:_save_pip():68] Saving pip packages done
+2024-01-04 15:18:18,217 DEBUG   HandlerThread:3033518 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2024-01-04 15:18:18,701 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/conda-environment.yaml
+2024-01-04 15:18:18,701 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/requirements.txt
+2024-01-04 15:18:34,989 DEBUG   HandlerThread:3033518 [system_info.py:_save_conda():87] Saving conda packages done
+2024-01-04 15:18:34,991 INFO    HandlerThread:3033518 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-04 15:18:35,285 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:18:35,285 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:18:35,286 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:18:35,286 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:18:35,286 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:18:35,286 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:18:35,287 DEBUG   SenderThread:3033518 [sender.py:send():380] send: files
+2024-01-04 15:18:35,287 INFO    SenderThread:3033518 [sender.py:_save_file():1380] saving file wandb-metadata.json with policy now
+2024-01-04 15:18:35,295 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:18:35,296 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:18:35,299 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:18:35,705 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/conda-environment.yaml
+2024-01-04 15:18:35,705 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/wandb-metadata.json
+2024-01-04 15:18:35,795 DEBUG   SenderThread:3033518 [sender.py:send():380] send: telemetry
+2024-01-04 15:18:36,705 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:18:36,707 INFO    wandb-upload_0:3033518 [upload_job.py:push():131] Uploaded file /tmp/tmpk9b550zrwandb/74pz3cp3-wandb-metadata.json
+2024-01-04 15:18:37,561 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:18:38,706 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:18:42,564 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:18:47,570 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:18:48,710 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/config.yaml
+2024-01-04 15:18:50,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:18:50,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:18:50,299 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:18:53,604 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:18:58,605 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:03,606 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:05,295 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:19:05,296 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:19:05,296 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:19:08,654 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:10,718 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:19:12,719 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:19:14,544 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:18,151 DEBUG   SystemMonitor:3033518 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-04 15:19:18,154 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:19:20,156 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:20,296 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:19:20,296 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:19:20,297 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:19:24,723 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:19:25,911 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:26,724 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:19:28,725 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:19:31,794 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:35,296 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:19:35,297 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:19:35,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:19:37,558 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:40,729 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:19:42,730 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:19:43,063 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:44,730 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:19:48,156 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:19:48,158 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:50,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:19:50,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:19:50,298 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:19:53,613 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:19:58,614 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:03,615 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:05,296 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:20:05,296 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:20:05,337 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:20:06,739 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:20:09,574 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:10,740 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:20:12,741 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:20:14,749 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:18,158 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:20:20,160 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:20,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:20:20,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:20:20,298 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:20:25,561 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:30,562 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:35,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:20:35,297 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:20:35,300 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:20:35,662 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:40,663 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:42,752 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:20:44,752 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:20:45,796 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:48,163 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:20:50,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:20:50,298 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:20:50,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:20:51,626 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:20:56,626 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:01,627 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:04,760 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:21:05,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:21:05,297 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:21:05,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:21:06,646 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:08,761 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:21:12,590 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:17,591 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:18,165 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:21:20,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:21:20,298 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:21:20,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:21:22,613 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:27,614 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:28,768 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:21:32,711 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:34,771 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:21:35,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:21:35,298 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:21:35,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:21:38,552 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:43,553 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:48,192 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:21:49,194 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:50,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:21:50,298 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:21:50,300 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:21:52,778 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:21:54,978 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:21:59,979 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:02,781 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:22:05,135 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:05,297 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:22:05,298 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:22:05,301 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:22:06,783 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:22:10,653 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:15,654 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:18,172 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:22:20,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:22:20,298 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:22:20,341 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:22:21,602 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:26,603 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:30,792 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:22:31,643 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:32,793 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:22:35,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:22:35,299 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:22:35,301 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:22:37,571 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:42,572 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:44,797 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:22:48,175 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:22:48,177 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:50,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:22:50,299 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:22:50,299 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:22:53,629 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:22:58,630 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:03,631 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:05,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:23:05,299 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:23:05,341 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:23:09,449 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:10,806 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:23:14,479 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:14,807 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:23:16,808 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:23:18,178 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:23:20,179 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:20,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:23:20,299 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:23:20,302 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:23:25,564 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:30,565 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:35,298 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:23:35,299 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:23:35,299 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:23:35,607 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:40,608 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:42,817 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:23:46,309 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:46,819 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:23:48,180 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:23:48,820 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:23:50,299 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:23:50,300 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:23:50,300 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:23:51,555 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:23:56,556 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:24:01,557 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:24:05,299 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:24:05,299 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:24:05,299 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:24:06,640 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:24:08,827 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:24:12,417 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:24:17,418 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:24:18,183 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:24:20,299 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-04 15:24:20,300 DEBUG   SenderThread:3033518 [sender.py:send_request():407] send_request: stop_status
+2024-01-04 15:24:20,300 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:24:25,300 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:24:30,301 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:24:35,300 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:24:40,303 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:24:42,062 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:24:42,839 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:24:45,304 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:24:47,062 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:24:48,197 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:24:50,300 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:24:52,199 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:24:55,306 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:24:56,844 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:24:57,827 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:00,307 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:25:02,828 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:04,847 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:25:05,300 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:25:08,735 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:10,308 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:25:13,736 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:15,309 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:25:18,188 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:25:18,429 WARNING FileStreamThread:3033518 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: 408 Client Error: Request Timeout for url: https://api.wandb.ai/files/dongziping/CNNdetection/0005/file_stream. func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x7f25d3322890>>, timeout=180), args: ('https://api.wandb.ai/files/dongziping/CNNdetection/0005/file_stream',), kwargs: {'json': {'files': {'wandb-events.jsonl': {'offset': 9, 'content': ['{"system.network.sent": 193169286.33, "system.network.recv": 2716486718.87, "system.proc.memory.availableMB": 70198.41, "system.memory": 63.47, "system.proc.memory.rssMB": 2929.89, "system.proc.memory.percent": 1.53, "system.cpu": 0.37, "system.cpu.0.cpu_percent": 28.95, "system.cpu.1.cpu_percent": 30.02, "system.cpu.2.cpu_percent": 35.35, "system.cpu.3.cpu_percent": 10.57, "system.cpu.4.cpu_percent": 8.07, "system.cpu.5.cpu_percent": 19.62, "system.cpu.6.cpu_percent": 10.23, "system.cpu.7.cpu_percent": 5.03, "system.cpu.8.cpu_percent": 17.37, "system.cpu.9.cpu_percent": 4.75, "system.cpu.10.cpu_percent": 4.64, "system.cpu.11.cpu_percent": 4.29, "system.cpu.12.cpu_percent": 5.44, "system.cpu.13.cpu_percent": 19.43, "system.cpu.14.cpu_percent": 4.41, "system.cpu.15.cpu_percent": 2.84, "system.cpu.16.cpu_percent": 19.74, "system.cpu.17.cpu_percent": 5.2, "system.cpu.18.cpu_percent": 35.55, "system.cpu.19.cpu_percent": 6.45, "system.cpu.20.cpu_percent": 5.7, "system.cpu.21.cpu_percent": 2.31, "system.cpu.22.cpu_percent": 0.93, "system.cpu.23.cpu_percent": 2.5, "system.cpu.24.cpu_percent": 0.1, "system.cpu.25.cpu_percent": 0.03, "system.cpu.26.cpu_percent": 12.01, "system.cpu.27.cpu_percent": 2.13, "system.cpu.28.cpu_percent": 9.41, "system.cpu.29.cpu_percent": 44.69, "system.cpu.30.cpu_percent": 2.36, "system.cpu.31.cpu_percent": 0.2, "system.cpu.32.cpu_percent": 3.37, "system.cpu.33.cpu_percent": 4.2, "system.cpu.34.cpu_percent": 2.31, "system.cpu.35.cpu_percent": 5.1, "system.cpu.36.cpu_percent": 6.32, "system.cpu.37.cpu_percent": 4.73, "system.cpu.38.cpu_percent": 2.67, "system.cpu.39.cpu_percent": 5.77, "system.cpu.40.cpu_percent": 8.9, "system.cpu.41.cpu_percent": 7.57, "system.cpu.42.cpu_percent": 6.96, "system.cpu.43.cpu_percent": 5.18, "system.cpu.44.cpu_percent": 4.83, "system.cpu.45.cpu_percent": 5.51, "system.cpu.46.cpu_percent": 5.18, "system.cpu.47.cpu_percent": 7.95, "system.cpu.48.cpu_percent": 2.89, "system.cpu.49.cpu_percent": 7.29, "system.cpu.50.cpu_percent": 1.34, "system.cpu.51.cpu_percent": 0.13, "system.cpu.52.cpu_percent": 0.47, "system.cpu.53.cpu_percent": 1.57, "system.cpu.54.cpu_percent": 0.53, "system.cpu.55.cpu_percent": 0.53, "system.cpu.56.cpu_percent": 0.37, "system.cpu.57.cpu_percent": 1.87, "system.cpu.58.cpu_percent": 0.9, "system.cpu.59.cpu_percent": 1.1, "system.cpu.60.cpu_percent": 2.0, "system.cpu.61.cpu_percent": 0.53, "system.cpu.62.cpu_percent": 0.87, "system.cpu.63.cpu_percent": 12.0, "system.proc.cpu.threads": 22, "system.disk.\\\\.usagePercent": 4.9, "system.disk.\\\\.usageGB": 40.55, "system.disk.in": 475.36, "system.disk.out": 99.44, "system.gpu.0.memoryAllocated": 82.21, "system.gpu.process.0.memoryAllocated": 82.21, "system.gpu.1.memoryAllocated": 82.21, "system.gpu.2.memoryAllocated": 82.21, "system.gpu.3.memoryAllocated": 82.21, "system.gpu.4.memoryAllocated": 1.29, "system.gpu.5.memoryAllocated": 97.25, "system.gpu.6.memoryAllocated": 1.29, "system.gpu.7.memoryAllocated": 1.29, "system.gpu.0.memoryAllocatedBytes": 21186543616.0, "system.gpu.process.0.memoryAllocatedBytes": 21186543616.0, "system.gpu.1.memoryAllocatedBytes": 21186543616.0, "system.gpu.2.memoryAllocatedBytes": 21186543616.0, "system.gpu.3.memoryAllocatedBytes": 21186543616.0, "system.gpu.4.memoryAllocatedBytes": 331808768.0, "system.gpu.5.memoryAllocatedBytes": 25062080512.0, "system.gpu.6.memoryAllocatedBytes": 331808768.0, "system.gpu.7.memoryAllocatedBytes": 331808768.0, "system.gpu.0.memory": 4.93, "system.gpu.process.0.memory": 4.93, "system.gpu.1.memory": 6.8, "system.gpu.2.memory": 4.87, "system.gpu.3.memory": 3.73, "system.gpu.4.memory": 0.0, "system.gpu.5.memory": 0.0, "system.gpu.6.memory": 0.0, "system.gpu.7.memory": 0.0, "system.gpu.0.gpu": 46.67, "system.gpu.process.0.gpu": 46.67, "system.gpu.1.gpu": 69.2, "system.gpu.2.gpu": 46.67, "system.gpu.3.gpu": 46.2, "system.gpu.4.gpu": 0.0, "system.gpu.5.gpu": 0.07, "system.gpu.6.gpu": 0.0, "system.gpu.7.gpu": 0.0, "system.gpu.0.temp": 45.27, "system.gpu.process.0.temp": 45.27, "system.gpu.1.temp": 40.87, "system.gpu.2.temp": 43.67, "system.gpu.3.temp": 45.07, "system.gpu.4.temp": 24.0, "system.gpu.5.temp": 34.4, "system.gpu.6.temp": 26.93, "system.gpu.7.temp": 27.0, "system.gpu.0.powerWatts": 112.28, "system.gpu.process.0.powerWatts": 112.28, "system.gpu.1.powerWatts": 130.79, "system.gpu.2.powerWatts": 123.87, "system.gpu.3.powerWatts": 127.38, "system.gpu.4.powerWatts": 21.04, "system.gpu.5.powerWatts": 96.32, "system.gpu.6.powerWatts": 16.83, "system.gpu.7.powerWatts": 24.84, "system.gpu.0.powerPercent": 32.08, "system.gpu.process.0.powerPercent": 32.08, "system.gpu.1.powerPercent": 37.37, "system.gpu.2.powerPercent": 35.39, "system.gpu.3.powerPercent": 36.39, "system.gpu.4.powerPercent": 6.01, "system.gpu.5.powerPercent": 27.52, "system.gpu.6.powerPercent": 4.81, "system.gpu.7.powerPercent": 7.1, "_wandb": true, "_timestamp": 1704353028.177653, "_runtime": 331.464492}', '{"system.network.sent": 209309665.6, "system.network.recv": 3001610789.67, "system.proc.memory.availableMB": 70183.09, "system.memory": 63.47, "system.proc.memory.rssMB": 2929.53, "system.proc.memory.percent": 1.53, "system.cpu": 0.43, "system.cpu.0.cpu_percent": 25.57, "system.cpu.1.cpu_percent": 8.88, "system.cpu.2.cpu_percent": 12.68, "system.cpu.3.cpu_percent": 18.68, "system.cpu.4.cpu_percent": 4.64, "system.cpu.5.cpu_percent": 46.04, "system.cpu.6.cpu_percent": 5.7, "system.cpu.7.cpu_percent": 6.13, "system.cpu.8.cpu_percent": 4.86, "system.cpu.9.cpu_percent": 3.93, "system.cpu.10.cpu_percent": 1.67, "system.cpu.11.cpu_percent": 5.71, "system.cpu.12.cpu_percent": 6.33, "system.cpu.13.cpu_percent": 15.85, "system.cpu.14.cpu_percent": 3.89, "system.cpu.15.cpu_percent": 26.46, "system.cpu.16.cpu_percent": 26.75, "system.cpu.17.cpu_percent": 13.49, "system.cpu.18.cpu_percent": 31.74, "system.cpu.19.cpu_percent": 5.55, "system.cpu.20.cpu_percent": 3.71, "system.cpu.21.cpu_percent": 9.69, "system.cpu.22.cpu_percent": 0.87, "system.cpu.23.cpu_percent": 8.37, "system.cpu.24.cpu_percent": 1.13, "system.cpu.25.cpu_percent": 0.07, "system.cpu.26.cpu_percent": 0.53, "system.cpu.27.cpu_percent": 17.77, "system.cpu.28.cpu_percent": 0.23, "system.cpu.29.cpu_percent": 23.57, "system.cpu.30.cpu_percent": 7.33, "system.cpu.31.cpu_percent": 1.53, "system.cpu.32.cpu_percent": 2.03, "system.cpu.33.cpu_percent": 1.74, "system.cpu.34.cpu_percent": 7.51, "system.cpu.35.cpu_percent": 3.34, "system.cpu.36.cpu_percent": 3.74, "system.cpu.37.cpu_percent": 3.66, "system.cpu.38.cpu_percent": 6.51, "system.cpu.39.cpu_percent": 3.9, "system.cpu.40.cpu_percent": 4.89, "system.cpu.41.cpu_percent": 2.0, "system.cpu.42.cpu_percent": 4.03, "system.cpu.43.cpu_percent": 4.85, "system.cpu.44.cpu_percent": 7.79, "system.cpu.45.cpu_percent": 7.49, "system.cpu.46.cpu_percent": 7.93, "system.cpu.47.cpu_percent": 13.65, "system.cpu.48.cpu_percent": 1.0, "system.cpu.49.cpu_percent": 3.64, "system.cpu.50.cpu_percent": 2.73, "system.cpu.51.cpu_percent": 5.2, "system.cpu.52.cpu_percent": 1.93, "system.cpu.53.cpu_percent": 0.1, "system.cpu.54.cpu_percent": 0.43, "system.cpu.55.cpu_percent": 0.2, "system.cpu.56.cpu_percent": 0.37, "system.cpu.57.cpu_percent": 0.37, "system.cpu.58.cpu_percent": 0.27, "system.cpu.59.cpu_percent": 0.47, "system.cpu.60.cpu_percent": 2.89, "system.cpu.61.cpu_percent": 1.1, "system.cpu.62.cpu_percent": 2.2, "system.cpu.63.cpu_percent": 5.6, "system.proc.cpu.threads": 22, "system.disk.\\\\.usagePercent": 4.9, "system.disk.\\\\.usageGB": 40.55, "system.disk.in": 547.9, "system.disk.out": 104.31, "system.gpu.0.memoryAllocated": 82.21, "system.gpu.process.0.memoryAllocated": 82.21, "system.gpu.1.memoryAllocated": 82.21, "system.gpu.2.memoryAllocated": 82.21, "system.gpu.3.memoryAllocated": 82.21, "system.gpu.4.memoryAllocated": 1.29, "system.gpu.5.memoryAllocated": 97.25, "system.gpu.6.memoryAllocated": 1.29, "system.gpu.7.memoryAllocated": 1.29, "system.gpu.0.memoryAllocatedBytes": 21186543616.0, "system.gpu.process.0.memoryAllocatedBytes": 21186543616.0, "system.gpu.1.memoryAllocatedBytes": 21186543616.0, "system.gpu.2.memoryAllocatedBytes": 21186543616.0, "system.gpu.3.memoryAllocatedBytes": 21186543616.0, "system.gpu.4.memoryAllocatedBytes": 331808768.0, "system.gpu.5.memoryAllocatedBytes": 25062080512.0, "system.gpu.6.memoryAllocatedBytes": 331808768.0, "system.gpu.7.memoryAllocatedBytes": 331808768.0, "system.gpu.0.memory": 5.87, "system.gpu.process.0.memory": 5.87, "system.gpu.1.memory": 5.87, "system.gpu.2.memory": 7.87, "system.gpu.3.memory": 1.27, "system.gpu.4.memory": 0.0, "system.gpu.5.memory": 0.0, "system.gpu.6.memory": 0.0, "system.gpu.7.memory": 0.0, "system.gpu.0.gpu": 13.67, "system.gpu.process.0.gpu": 13.67, "system.gpu.1.gpu": 53.33, "system.gpu.2.gpu": 26.67, "system.gpu.3.gpu": 25.87, "system.gpu.4.gpu": 0.0, "system.gpu.5.gpu": 0.0, "system.gpu.6.gpu": 0.0, "system.gpu.7.gpu": 0.0, "system.gpu.0.temp": 46.6, "system.gpu.process.0.temp": 46.6, "system.gpu.1.temp": 41.33, "system.gpu.2.temp": 45.8, "system.gpu.3.temp": 45.07, "system.gpu.4.temp": 24.0, "system.gpu.5.temp": 34.47, "system.gpu.6.temp": 27.0, "system.gpu.7.temp": 27.0, "system.gpu.0.powerWatts": 123.54, "system.gpu.process.0.powerWatts": 123.54, "system.gpu.1.powerWatts": 126.74, "system.gpu.2.powerWatts": 128.74, "system.gpu.3.powerWatts": 122.09, "system.gpu.4.powerWatts": 21.03, "system.gpu.5.powerWatts": 95.31, "system.gpu.6.powerWatts": 16.81, "system.gpu.7.powerWatts": 24.91, "system.gpu.0.powerPercent": 35.3, "system.gpu.process.0.powerPercent": 35.3, "system.gpu.1.powerPercent": 36.21, "system.gpu.2.powerPercent": 36.78, "system.gpu.3.powerPercent": 34.88, "system.gpu.4.powerPercent": 6.01, "system.gpu.5.powerPercent": 27.23, "system.gpu.6.powerPercent": 4.8, "system.gpu.7.powerPercent": 7.11, "_wandb": true, "_timestamp": 1704353058.18024, "_runtime": 361.467079}']}, 'output.log': {'offset': 0, 'content': ['ERROR 2024-01-04T07:24:08.732296   7%|████████████▏                                                                                                                                                                  | 44/631 [05:30<1:34:18,  9.64s/it]\n']}}, 'dropped': 0}}
+2024-01-04 15:25:19,190 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:20,300 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:25:24,854 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:25:25,041 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:25,311 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:25:30,042 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:30,312 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:25:35,043 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:35,301 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:25:40,044 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:40,314 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:25:44,862 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:25:45,315 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:25:46,005 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:48,192 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:25:50,301 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:25:51,194 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:25:52,865 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:25:55,317 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:25:56,460 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:00,318 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:26:01,461 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:05,301 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:26:06,462 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:10,320 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:26:11,463 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:12,872 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:26:15,321 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:26:16,624 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:18,193 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:26:20,301 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:26:22,195 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:25,323 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:26:27,196 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:30,324 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:26:32,197 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:34,881 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:26:35,301 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:26:37,999 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:40,326 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:26:42,883 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:26:43,560 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:45,326 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:26:48,196 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:26:49,198 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:50,301 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:26:54,199 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:26:55,328 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:26:59,200 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:00,329 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:27:02,890 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:27:04,626 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:05,302 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:27:09,627 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:10,331 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:27:14,628 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:15,332 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:27:18,199 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:27:20,200 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:20,302 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:27:25,201 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:25,334 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:27:26,899 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:27:30,335 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:27:30,584 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:32,901 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:27:35,302 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:27:36,475 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:40,337 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:27:41,476 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:45,338 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:27:46,477 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:48,201 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:27:50,302 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:27:52,203 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:27:54,909 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:27:55,339 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:27:57,796 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:00,340 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:28:02,797 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:05,302 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:28:07,798 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:10,342 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:28:12,798 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:15,343 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:28:16,917 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:28:18,267 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:28:18,270 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:20,302 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:28:22,919 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:28:23,826 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:24,920 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:28:25,345 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:28:28,827 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:30,346 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:28:33,828 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:35,303 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:28:38,828 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:40,348 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:28:43,829 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:44,927 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:28:45,349 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:28:48,207 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:28:49,208 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:50,303 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:28:54,209 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:28:55,350 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:28:59,210 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:00,351 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:29:04,211 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:05,303 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:29:06,935 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:29:09,648 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:10,353 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:29:12,937 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:29:15,203 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:15,354 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:29:18,210 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:29:20,212 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:20,303 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:29:25,213 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:25,356 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:29:30,214 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:30,357 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:29:34,946 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:29:35,303 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:29:35,607 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:40,358 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:29:40,608 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:45,359 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:29:45,609 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:48,212 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:29:50,303 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:29:51,214 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:55,361 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:29:56,259 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:29:56,953 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:30:00,362 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:30:01,260 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:02,955 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:30:05,304 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:30:07,127 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:10,364 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:30:12,128 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:15,365 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:30:17,129 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:18,215 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:30:20,304 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:30:22,217 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:24,964 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:30:25,366 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:30:27,236 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:30,367 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:30:32,237 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:35,304 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:30:37,238 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:40,369 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:30:42,239 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:45,370 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:30:46,972 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:30:47,286 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:48,217 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:30:50,304 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:30:52,379 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:30:52,974 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:30:54,975 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:30:55,371 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:30:57,839 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:31:00,372 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:31:02,842 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:31:05,304 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:31:07,843 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:31:10,374 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:31:12,844 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:31:15,375 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-04 15:31:16,982 INFO    Thread-12 :3033518 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/files/output.log
+2024-01-04 15:31:18,218 DEBUG   SenderThread:3033518 [sender.py:send():380] send: stats
+2024-01-04 15:31:18,219 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:31:20,305 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-04 15:31:23,220 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: status_report
+2024-01-04 15:31:25,377 DEBUG   HandlerThread:3033518 [handler.py:handle_request():146] handle_request: keepalive

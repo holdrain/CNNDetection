@@ -21,6 +21,9 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--lr', type=float, default=0.0001, help='initial learning rate for adam')
         parser.add_argument('--debug',action='store_true',help='wandb wont start in debug mode')
         
+        #wandb
+        parser.add_argument("--wandb_id", type=str, default=None, help="resume from which wandb experiment")
+        parser.add_argument("--wandb_project", type=str, default="CNNdetection", help="which wandb project to submit to")
 
         self.isTrain = True
         return parser

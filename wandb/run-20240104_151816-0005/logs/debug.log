@@ -1,0 +1,27 @@
+2024-01-04 15:18:16,667 INFO    MainThread:3033250 [wandb_setup.py:_flush():76] Current SDK version is 0.16.0
+2024-01-04 15:18:16,667 INFO    MainThread:3033250 [wandb_setup.py:_flush():76] Configure stats pid to 3033250
+2024-01-04 15:18:16,667 INFO    MainThread:3033250 [wandb_setup.py:_flush():76] Loading settings from /mnt/traffic/home/dongziping/.config/wandb/settings
+2024-01-04 15:18:16,668 INFO    MainThread:3033250 [wandb_setup.py:_flush():76] Loading settings from /mnt/traffic/home/dongziping/CNNDetection/wandb/settings
+2024-01-04 15:18:16,668 INFO    MainThread:3033250 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-01-04 15:18:16,668 INFO    MainThread:3033250 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-01-04 15:18:16,668 INFO    MainThread:3033250 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program_abspath': '/mnt/traffic/home/dongziping/CNNDetection/train.py', 'program': '/mnt/traffic/home/dongziping/CNNDetection/train.py'}
+2024-01-04 15:18:16,668 INFO    MainThread:3033250 [wandb_init.py:_log_setup():524] Logging user logs to /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/logs/debug.log
+2024-01-04 15:18:16,668 INFO    MainThread:3033250 [wandb_init.py:_log_setup():525] Logging internal logs to /mnt/traffic/home/dongziping/CNNDetection/wandb/run-20240104_151816-0005/logs/debug-internal.log
+2024-01-04 15:18:16,668 INFO    MainThread:3033250 [wandb_init.py:init():564] calling init triggers
+2024-01-04 15:18:16,668 INFO    MainThread:3033250 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {'mode': 'binary', 'arch': 'resnet', 'rz_interp': ['bilinear'], 'blur_prob': 0.5, 'blur_sig': [0.0, 3.0], 'jpg_prob': 0.5, 'jpg_method': ['cv2', 'pil'], 'jpg_qual': [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100], 'dataroot': '/mnt/shared/cnndetection2020/train/', 'classes': ['airplane', 'bird', 'bicycle', 'boat', 'bottle', 'bus', 'car', 'cat', 'cow', 'chair', 'diningtable', 'dog', 'person', 'pottedplant', 'motorbike', 'tvmonitor', 'train', 'sheep', 'sofa', 'horse'], 'class_bal': False, 'batch_size': 800, 'loadSize': 224, 'cropSize': 224, 'gpu_ids': [0, 1, 2, 3], 'name': 'blur_jpg_prob0.5', 'epoch': 'latest', 'num_threads': 4, 'checkpoints_dir': './checkpoints', 'serial_batches': False, 'resize_or_crop': 'scale_and_crop', 'no_flip': False, 'init_type': 'normal', 'init_gain': 0.02, 'suffix': '', 'seed': 2023, 'earlystop_epoch': 5, 'data_aug': False, 'optim': 'adam', 'new_optim': False, 'loss_freq': 400, 'save_latest_freq': 2000, 'save_epoch_freq': 20, 'continue_train': False, 'epoch_count': 1, 'last_epoch': -1, 'train_split': 'train', 'val_split': 'test', 'niter': 10000, 'beta1': 0.9, 'lr': 0.0001, 'debug': False, 'wandb_id': '0005', 'wandb_project': 'CNNdetection', 'isTrain': True}
+2024-01-04 15:18:16,668 INFO    MainThread:3033250 [wandb_init.py:init():614] starting backend
+2024-01-04 15:18:16,669 INFO    MainThread:3033250 [wandb_init.py:init():618] setting up manager
+2024-01-04 15:18:16,710 INFO    MainThread:3033250 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-01-04 15:18:16,712 INFO    MainThread:3033250 [wandb_init.py:init():624] backend started and connected
+2024-01-04 15:18:16,725 INFO    MainThread:3033250 [wandb_init.py:init():716] updated telemetry
+2024-01-04 15:18:16,747 INFO    MainThread:3033250 [wandb_init.py:init():749] communicating run to backend with 90.0 second timeout
+2024-01-04 15:18:17,705 INFO    MainThread:3033250 [wandb_run.py:_on_init():2254] communicating current version
+2024-01-04 15:18:18,118 INFO    MainThread:3033250 [wandb_run.py:_on_init():2263] got version response upgrade_message: "wandb version 0.16.1 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-01-04 15:18:18,118 INFO    MainThread:3033250 [wandb_init.py:init():800] starting run threads in backend
+2024-01-04 15:18:35,295 INFO    MainThread:3033250 [wandb_run.py:_console_start():2233] atexit reg
+2024-01-04 15:18:35,295 INFO    MainThread:3033250 [wandb_run.py:_redirect():2088] redirect: wrap_raw
+2024-01-04 15:18:35,296 INFO    MainThread:3033250 [wandb_run.py:_redirect():2153] Wrapping output streams.
+2024-01-04 15:18:35,296 INFO    MainThread:3033250 [wandb_run.py:_redirect():2178] Redirects installed.
+2024-01-04 15:18:35,296 INFO    MainThread:3033250 [wandb_init.py:init():841] run started, returning control to user process

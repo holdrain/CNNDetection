@@ -1,0 +1,277 @@
+wandb_version: 1
+
+mode:
+  desc: null
+  value: binary
+arch:
+  desc: null
+  value: resnet
+rz_interp:
+  desc: null
+  value:
+  - bilinear
+blur_prob:
+  desc: null
+  value: 0.5
+blur_sig:
+  desc: null
+  value:
+  - 0.0
+  - 3.0
+jpg_prob:
+  desc: null
+  value: 0.5
+jpg_method:
+  desc: null
+  value:
+  - cv2
+  - pil
+jpg_qual:
+  desc: null
+  value:
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
+  - 54
+  - 55
+  - 56
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
+  - 79
+  - 80
+  - 81
+  - 82
+  - 83
+  - 84
+  - 85
+  - 86
+  - 87
+  - 88
+  - 89
+  - 90
+  - 91
+  - 92
+  - 93
+  - 94
+  - 95
+  - 96
+  - 97
+  - 98
+  - 99
+  - 100
+dataroot:
+  desc: null
+  value: /mnt/shared/cnndetection2020/train/
+classes:
+  desc: null
+  value:
+  - airplane
+  - bird
+  - bicycle
+  - boat
+  - bottle
+  - bus
+  - car
+  - cat
+  - cow
+  - chair
+  - diningtable
+  - dog
+  - person
+  - pottedplant
+  - motorbike
+  - tvmonitor
+  - train
+  - sheep
+  - sofa
+  - horse
+class_bal:
+  desc: null
+  value: false
+batch_size:
+  desc: null
+  value: 800
+loadSize:
+  desc: null
+  value: 224
+cropSize:
+  desc: null
+  value: 224
+gpu_ids:
+  desc: null
+  value:
+  - 0
+  - 1
+  - 2
+  - 3
+name:
+  desc: null
+  value: blur_jpg_prob0.5
+epoch:
+  desc: null
+  value: latest
+num_threads:
+  desc: null
+  value: 4
+checkpoints_dir:
+  desc: null
+  value: ./checkpoints
+serial_batches:
+  desc: null
+  value: false
+resize_or_crop:
+  desc: null
+  value: scale_and_crop
+no_flip:
+  desc: null
+  value: false
+init_type:
+  desc: null
+  value: normal
+init_gain:
+  desc: null
+  value: 0.02
+suffix:
+  desc: null
+  value: ''
+seed:
+  desc: null
+  value: 2023
+earlystop_epoch:
+  desc: null
+  value: 5
+data_aug:
+  desc: null
+  value: false
+optim:
+  desc: null
+  value: adam
+new_optim:
+  desc: null
+  value: false
+loss_freq:
+  desc: null
+  value: 400
+save_latest_freq:
+  desc: null
+  value: 2000
+save_epoch_freq:
+  desc: null
+  value: 20
+continue_train:
+  desc: null
+  value: false
+epoch_count:
+  desc: null
+  value: 1
+last_epoch:
+  desc: null
+  value: -1
+train_split:
+  desc: null
+  value: train
+val_split:
+  desc: null
+  value: test
+niter:
+  desc: null
+  value: 10000
+beta1:
+  desc: null
+  value: 0.9
+lr:
+  desc: null
+  value: 0.0001
+debug:
+  desc: null
+  value: false
+wandb_id:
+  desc: null
+  value: '0005'
+wandb_project:
+  desc: null
+  value: CNNdetection
+isTrain:
+  desc: null
+  value: true
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.3
+    cli_version: 0.16.0
+    framework: huggingface
+    huggingface_version: 4.35.0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1704352696.713161
+    t:
+      1:
+      - 1
+      - 5
+      - 11
+      - 41
+      - 49
+      - 53
+      - 55
+      - 71
+      2:
+      - 1
+      - 5
+      - 11
+      - 41
+      - 49
+      - 53
+      - 55
+      - 71
+      3:
+      - 13
+      - 14
+      - 16
+      - 23
+      4: 3.11.3
+      5: 0.16.0
+      6: 4.35.0
+      8:
+      - 5
+      13: linux-x86_64

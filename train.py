@@ -75,12 +75,12 @@ if __name__ == '__main__':
     # wandb
     if accelerator.is_main_process and not opt.debug:
         # init wandb logging
-        if opt.wandb_id is not None:
+        if opt.continue_train:
             # project为项目名称，config用来记录当前实验的参数配置，id是本次实验的唯一标识符
             # must代表强制恢复一个之前中断的实验，恢复失败则报错，id，name不是必要参数
-            wandb.init(project=opt.wandb_project, config=opt, id=opt.wandb_id, resume="must")
+            wandb.init(project=opt.wandb_project, config=opt, id=opt.wandb_id,resume="must")
         else:
-            wandb.init(project=opt.wandb_project, config=opt)
+            wandb.init(project=opt.wandb_project, name = opt.name+"_"+opt.arch, id = opt.wandb_id ,config=opt)
 
     # continue training
     if opt.continue_train:
@@ -120,9 +120,9 @@ if __name__ == '__main__':
                     trainer.save_networks('latest',accelerator)
                 
                 pbar.update(1)
-                if i == 30:
-                    accelerator.wait_for_everyone()
-                    break
+                # if i == 30:
+                #     accelerator.wait_for_everyone()
+                #     break
 
             if epoch % opt.save_epoch_freq == 0 and accelerator.is_main_process:
                 print('saving the model at the end of epoch %d, iters %d' %
@@ -135,7 +135,7 @@ if __name__ == '__main__':
             acc, ap = Custom_validate(trainer.model, vdl,accelerator)[:2]
             if not opt.debug and accelerator.is_main_process:
                 wandb.log({'accuracy':acc,'ap':ap})
-                pbar.set_description("(Val @ epoch {}) acc: {}; ap: {}".format(epoch, acc, ap))
+            print("(Val @ epoch {}) acc: {}; ap: {}".format(epoch, acc, ap))
             early_stopping(acc, trainer)
             if early_stopping.early_stop:
                 cont_train = trainer.adjust_learning_rate()

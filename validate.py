@@ -24,35 +24,9 @@ def validate(model, opt):
     ap = average_precision_score(y_true, y_pred)
     return acc, ap, r_acc, f_acc, y_true, y_pred
 
-# def Custom_validate(model,dl,accelerator):
-#     count = 0
-#     with torch.no_grad():
-#         all_y_true, all_y_pred = [],[]
-#         with tqdm(initial=0,total=len(dl),disable=not accelerator.is_main_process) as pbar:
-#             for img, label in dl:
-#                 in_tens = img
-#                 y_pred = torch.softmax(model(in_tens),dim=1)
-#                 y_true = label.flatten()
-#                 # gather y_pred and y_true
-#                 p,t = accelerator.gather_for_metrics((y_pred,y_true))
-#                 all_y_pred.extend(p.tolist()) #归一化
-#                 all_y_true.extend(t.tolist())
-#                 pbar.update(1)
-#                 count += 1
-#                 if count == 30:
-#                     break
-
-#     all_y_pred = torch.Tensor(all_y_pred)
-#     all_y_true = torch.Tensor(all_y_true)
-#     all_y_true, all_y_pred = np.array(all_y_true), np.array(all_y_pred)
-#     r_acc = accuracy_score(all_y_true[all_y_true==0], np.argmax(all_y_pred[all_y_true==0],dim=1))
-#     f_acc = accuracy_score(all_y_true[all_y_true==1], np.argmax(all_y_pred[all_y_true==1],dim=1))
-#     acc = accuracy_score(all_y_true, np.argmax(all_y_pred,dim=1))
-#     ap = average_precision_score(all_y_true, all_y_pred[1])
-#     return acc, ap, r_acc, f_acc, y_true, y_pred
 
 def Custom_validate(model,dl,accelerator):
-    count = 0 
+    # count = 0 
     with torch.inference_mode():
         y_true, y_pred = [], []
         for img, label in tqdm(dl,position=0,desc=f"validating",disable=not accelerator.is_main_process):
@@ -61,9 +35,9 @@ def Custom_validate(model,dl,accelerator):
             all_y_p,all_label = accelerator.gather_for_metrics((y_p,label))
             y_pred.extend(all_y_p.tolist()) 
             y_true.extend(all_label.flatten().tolist())
-            count += 1
-            if count == 30:
-                break
+            # count += 1
+            # if count == 30:
+            #     break
         y_true, y_pred = np.array(y_true), np.array(y_pred,dtype=np.float32)
         r_acc = accuracy_score(y_true[y_true==0], np.argmax(y_pred[y_true==0],axis=1))
         f_acc = accuracy_score(y_true[y_true==1], np.argmax(y_pred[y_true==1],axis=1))
