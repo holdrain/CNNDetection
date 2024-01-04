@@ -15,13 +15,13 @@ class BaseModel(nn.Module):
         self.save_dir = os.path.join(opt.checkpoints_dir, opt.name)
         self.device = torch.device('cuda:{}'.format(opt.gpu_ids[0])) if opt.gpu_ids else torch.device('cpu')
 
-    def save_networks(self, epoch):
+    def save_networks(self, epoch ,accelerator):
         save_filename = 'model_epoch_%s.pth' % epoch
         save_path = os.path.join(self.save_dir, save_filename)
-
+        model = accelerator.unwrap_model(self.model)
         # serialize model and optimizer to dict
         state_dict = {
-            'model': self.model.state_dict(),
+            'model': model.state_dict(),
             'optimizer' : self.optimizer.state_dict(),
             'total_steps' : self.total_steps,
         }

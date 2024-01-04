@@ -25,7 +25,7 @@ class BaseOptions():
         parser.add_argument('--dataroot', default='/mnt/shared/cnndetection2020', help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
         parser.add_argument('--classes', default='', help='image classes to train on')
         parser.add_argument('--class_bal', action='store_true')
-        parser.add_argument('--batch_size', type=int, default=1536, help='input batch size')
+        parser.add_argument('--batch_size', type=int, default=1000, help='input batch size')
         parser.add_argument('--loadSize', type=int, default=224, help='scale images to this size')
         parser.add_argument('--cropSize', type=int, default=224, help='then crop to this size')
         parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')

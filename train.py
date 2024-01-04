@@ -55,7 +55,6 @@ if __name__ == '__main__':
     setup_for_distributed(accelerator.is_main_process)
     set_seeds(opt.seed)
 
-    # torch.set_default_device(accelerator.device)
     # dl,vdl and model
     dl = create_dataloader(opt)
     vdl = create_dataloader(val_opt)
@@ -64,9 +63,6 @@ if __name__ == '__main__':
     # weights is none in default
 
     model = model_dic[opt.arch]
-
-
-
 
     # optimizer
     if opt.optim == 'adam':
@@ -106,7 +102,7 @@ if __name__ == '__main__':
         iter_data_time = time.time()
         epoch_iter = 0
         with tqdm(initial = 0,total = len(dl),disable = not accelerator.is_main_process) as pbar:
-            for data in dl:
+            for i,data in enumerate(dl):
                 trainer.total_steps += 1
                 epoch_iter += opt.batch_size
 
@@ -115,29 +111,32 @@ if __name__ == '__main__':
 
                 if trainer.total_steps % opt.loss_freq == 0 and accelerator.is_main_process:
                     print("Train loss: {} at step: {}".format(trainer.loss, trainer.total_steps))
-                    wandb.log({'Train loss':trainer.loss})
+                    if not opt.debug:
+                        wandb.log({'Train loss':trainer.loss})
 
                 if trainer.total_steps % opt.save_latest_freq == 0 and accelerator.is_main_process:
                     print('saving the latest model %s (epoch %d, model.total_steps %d)' %
                         (opt.name, epoch, trainer.total_steps))
-                    trainer.save_networks('latest')
-
+                    trainer.save_networks('latest',accelerator)
+                
                 pbar.update(1)
-                # print("Iter time: %d sec" % (time.time()-iter_data_time))
-                # iter_data_time = time.time()
+                if i == 30:
+                    accelerator.wait_for_everyone()
+                    break
 
             if epoch % opt.save_epoch_freq == 0 and accelerator.is_main_process:
                 print('saving the model at the end of epoch %d, iters %d' %
                     (epoch, trainer.total_steps))
-                trainer.save_networks('latest')
-                trainer.save_networks(epoch)
+                trainer.save_networks('latest',accelerator)
+                trainer.save_networks(epoch,accelerator)
 
             # Validation
             trainer.eval()
-            acc, ap = Custom_validate(model.model, val_opt)[:2]
-            wandb.log({'accuracy':acc,'ap':ap})
+            acc, ap = Custom_validate(trainer.model, vdl,accelerator)[:2]
+            if not opt.decbug:
+                wandb.log({'accuracy':acc,'ap':ap})
             pbar.set_description("(Val @ epoch {}) acc: {}; ap: {}".format(epoch, acc, ap))
-            early_stopping(acc, model)
+            early_stopping(acc, trainer.model)
             if early_stopping.early_stop:
                 cont_train = trainer.adjust_learning_rate()
                 if cont_train:
